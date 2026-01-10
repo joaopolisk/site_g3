@@ -307,10 +307,10 @@ const terminalTitle = document.getElementById("terminalTitle");
 // Localize os members no script.js
 members.forEach(member => {
     member.addEventListener("click", () => {
-        
+
         members.forEach(m => m.classList.remove("active"));
         member.classList.add("active");
- 
+
         member.scrollIntoView({
             behavior: 'smooth',
             block: 'nearest',

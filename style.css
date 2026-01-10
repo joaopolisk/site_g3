@@ -265,8 +265,9 @@ footer {
     gap: 30px;
     padding: 20px;
     width: 80%;
-    scrollbar-width: none; 
+    scrollbar-width: none;
 }
+
 .members-carousel-container::-webkit-scrollbar {
     display: none;
 }
@@ -281,6 +282,7 @@ footer {
     opacity: 0.6;
     transition: 0.3s;
 }
+
 .team-member.active {
     opacity: 1;
     transform: scale(1.05);

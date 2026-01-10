@@ -1,16 +1,15 @@
 const testimonials = [
     { name: "Érica", text: "O desafio foi controlar corretamente as jogadas do usuário e do computador sem quebrar o fluxo do jogo. Resolvi isso organizando bem a ordem das chamadas dos métodos e garantindo que cada turno fosse executado corretamente.", img: "./user1.jpg" },
-    { name: "Carol", text: "Trabalhei na base do tabuleiro e em parte da lógica principal. A maior dificuldade foi garantir que as jogadas fossem válidas e que o estado do jogo estivesse sempre correto. Resolvi isso testando muitos cenários diferentes e ajustando a lógica passo a passo.", img: "./user2.jpg" },
-    { name: "Carlos", text: "Trabalhar em equipe no Git foi um aprendizado real.", img: "./user7.jpg" },
+    { name: "Ana Carolina", text: "Trabalhei na base do tabuleiro e em parte da lógica principal. A maior dificuldade foi garantir que as jogadas fossem válidas e que o estado do jogo estivesse sempre correto. Resolvi isso testando muitos cenários diferentes e ajustando a lógica passo a passo.", img: "./user2.jpg" },
+    { name: "Carlos Pablo", text: "Trabalhar em equipe no Git foi um aprendizado real.", img: "./user7.jpg" },
     { name: "Isadora", text: "A parte mais difícil foi tratar as entradas do usuário e converter os dados para o formato que o jogo precisava. Superei isso criando validações e testando vários tipos de entrada até o sistema ficar robusto e sem erros.", img: "./user4.jpg" },
     { name: "Lucas Cardoso", text: "Minha maior dificuldade foi deixar a exibição no console organizada e clara para o usuário. Com testes e ajustes na formatação, consegui deixar o jogo mais bonito, compreensível e com mensagens bem apresentadas.", img: "./user5.jpg" },
     { name: "Thalia", text: "A maior dificuldade foi organizar o fluxo completo do jogo, controlando turnos, verificações de vitória e empate. No começo parecia confuso, mas separando o problema em pequenas funções e testando cada parte, consegui estruturar toda a lógica principal e fazer tudo funcionar em conjunto.", img: "./user6.jpg" },
-    { name: "Abner Chaves", text: "Fiquei responsável por parte da lógica que verifica as condições de vitória. O maior desafio foi pensar em todas as possibilidades de linha, coluna e diagonal. Resolvi isso separando cada verificação em métodos pequenos e testando cada um individualmente.", img: "./user7.jpg" }
+    { name: "Abner Chaves", text: "Fiquei responsável por parte da lógica que verifica as condições de vitória. O maior desafio foi pensar em todas as possibilidades de linha, coluna e diagonal. Resolvi isso separando cada verificação em métodos pequenos e testando cada um individualmente.", img: "./user3.jpg" }
 ];
 
 const track = document.getElementById('carouselTrack');
 
-// Cria os cards dinamicamente
 testimonials.forEach(t => {
     const card = document.createElement('div');
     card.className = 'testimonial-card';
@@ -227,7 +226,7 @@ const memberScripts = {
         "✔ Parte: Controle principal do jogo"
     ],
 
-    ana: [
+    carol: [
         "$ cat Tabuleiro.java",
         "Ana Carolina cuidou da base do jogo:",
         "",
@@ -256,7 +255,7 @@ const memberScripts = {
 
     carlos: [
         "$ cat Verificador.java",
-        "Carlos ficou responsável por TODA a lógica de vitória:",
+        "Carlos Pablo ficou responsável por TODA a lógica de vitória:",
         "",
         "- teveGanhadorLinha()",
         "- teveGanhadorColuna()",
@@ -297,15 +296,6 @@ const memberScripts = {
         "- JogoDaVelha.java",
         "",
         "✔ Parte: Implementação parcial do jogo"
-    ],
-
-    carol: [
-        "$ cat JogoDaVelha.java",
-        "Carol implementou a lógica de jogo e implmentação de classes:",
-        "",
-        "- JogoDaVelha.java",
-        "",
-        "✔ Parte: Implementação parcial do jogo"
     ]
 };
 
@@ -314,15 +304,21 @@ const members = document.querySelectorAll(".team-member");
 const terminalOutput = document.getElementById("terminalOutput_2");
 const terminalTitle = document.getElementById("terminalTitle");
 
+// Localize os members no script.js
 members.forEach(member => {
     member.addEventListener("click", () => {
-
+        
         members.forEach(m => m.classList.remove("active"));
         member.classList.add("active");
+ 
+        member.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+        });
 
         const id = member.dataset.member;
-        terminalTitle.innerText = "1000Devs - " + member.innerText;
-
+        terminalTitle.innerText = "1000Devs - " + member.querySelector('.name').innerText;
         loadMember(id);
     });
 });
@@ -344,8 +340,5 @@ function loadMember(id) {
         i++;
     }, 300);
 }
-
-// carrega o primeiro automaticamente
-loadMember("erica");
 
 

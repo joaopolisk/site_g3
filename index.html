@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio 1000 Dev's - Jogo da Velha Java</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="logo-container">
             <img src="java-icon.png" alt="Java Logo" class="java-logo">
-            <h1>Desafio 1000Dev's</h1>
+            <h1>1º Hackathon 1000 Dev's</h1>
         </div>
-        <p>A jornada de criar um Jogo da Velha em Java</p>
+        <h2><br>Missão:<br>Desenvolvimento de um jogo da velha em Java!<br></h2>
     </header>
     <main>
         <section class="testimonial-section">
@@ -22,159 +24,232 @@
             </div>
         </section>
     </main>
-<div>
-<section class="project-link">
-    <h2>Projeto completo disponível em: <a href="https://github.com/joaopolisk/g3" target="_blank"ass="github-link"> github.com/joaopolisk/g3 </a></h2>
-    <div><h2>Terminal Interativo (Simulação)</h2></div>
-</section class="project-link">
+    <div>
+        <section class="project-link">
+            <h2>Projeto completo disponível em: <a href="https://github.com/joaopolisk/g3" target="_blank"
+                    ass="github-link"> github.com/joaopolisk/g3 </a></h2>
+            <div>
+                <h2>Terminal Interativo (Simulação)</h2>
+            </div>
+        </section class="project-link">
 
-<section class="testimonial-section">
-    <div class="terminal">
-        <div class="terminal-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="terminal-title">1000Dev´s - bash</span>
-        </div>
-        <div class="terminal-body" id="terminalOutput">
-            <div>Bem-vindo ao terminal do Desafio 1000Dev´s</div>
-            
-            <br>
-        </div>
+        <section class="testimonial-section">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">1000Dev´s - bash</span>
+                </div>
+                <div class="terminal-body" id="terminalOutput">
+                    <div>Bem-vindo ao terminal do Desafio 1000 Dev´s</div>
 
-        <div class="terminal-input-line">
-            <span class="prompt">$</span>
-            <input type="text" id="terminalInput" autofocus autocomplete="off">
-        </div>
-    </div>
-</section>
-<section class="setup-guide">
-        <h2>Como jogar pelo terminal \o/</h2>
-        <p>Siga os passos abaixo e comece a jogar!:</p>
-        
-        <div class="step">
-            <span>1. Clone o repositório no terminal</span>
-            <div class="code-block">
-                <code>git clone https://github.com/joaopolisk/g3.git</code>
+                    <br>
+                </div>
+
+                <div class="terminal-input-line">
+                    <span class="prompt">$</span>
+                    <input type="text" id="terminalInput" autofocus autocomplete="off">
+                </div>
+            </div>
+        </section>
+        <section class="setup-guide">
+            <h2>Como jogar pelo terminal \o/</h2>
+            <p>Siga os passos abaixo e comece a jogar!:</p>
+
+            <div class="step">
+                <span>1. Clone o repositório no terminal</span>
+                <div class="code-block">
+                    <code>git clone https://github.com/joaopolisk/g3.git</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <span>2. Acesse a pasta do projeto</span>
+                <div class="code-block">
+                    <code>cd g3</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <span>3. Compile</span>
+                <div class="code-block">
+                    <code>javac App.java</code>
+                </div>
+            </div>
+            <div class="step">
+                <span>4. Execute</span>
+                <div class="code-block">
+                    <code>java App</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <span>5. Comece a jogar!</span>
+                <div class="code-block">
+                    <code>Digite 1 1 ou 2 2</code>
+                </div>
+            </div>
+
+        </section>
+        <section class="setup-guide">
+            <h2>Como testar o projeto localmente</h2>
+            <p>Siga os passos abaixo para clonar e executar o repositório:</p>
+
+            <div class="step">
+                <span>1. Clone o repositório</span>
+                <div class="code-block">
+                    <code>git clone https://github.com/joaopolisk/g3.git</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <span>2. Acesse a pasta do projeto</span>
+                <div class="code-block">
+                    <code>cd g3</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <span>3. Compile e execute (Via Terminal)</span>
+                <div class="code-block">
+                    <code>javac Main.java && java Main</code>
+                </div>
+            </div>
+        </section>
+    <section class="team-terminal">
+    <h2>Conheça os Participantes do Hackathon:</h2> 
+    <div class="members-carousel-container">   
+        <div class="team-member" data-member="thalia">
+            <img src="user6.jpg" class="profile-pic">
+            <div class="members-info">
+                <div class="name">Thalia Nunes</div>
+                <div class="social-wrapper">
+                    <a href="https://www.linkedin.com/in/thalianunes/" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="linkedin-icon.png" class="social-icon">
+                        <span>Visite meu LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/ThaliaNunesLeite" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="github-icon.png" class="social-icon">
+                        <span>Visite meu GitHub</span>
+                    </a>
+                </div>
             </div>
         </div>
-
-        <div class="step">
-            <span>2. Acesse a pasta do projeto</span>
-            <div class="code-block">
-                <code>cd g3</code>
-            </div>
-        </div>
-
-        <div class="step">
-            <span>3. Compile e execute</span>
-            <div class="code-block">
-                <code>javac App.java</code>
-            </div>
-        </div>
-        <div class="step">
-            <span>4. Execute</span>
-            <div class="code-block">
-                <code>java App</code>
-            </div>
-        </div>
-
-        <div class="step">
-            <span>5. Comece a jogar</span>
-            <div class="code-block">
-                <code>Digite 1 1 ou 2 2</code>
-            </div>
-        </div>
-    
-    </section>
-<section class="setup-guide">
-        <h2>Como testar o projeto localmente</h2>
-        <p>Siga os passos abaixo para clonar e executar o repositório:</p>
-        
-        <div class="step">
-            <span>1. Clone o repositório</span>
-            <div class="code-block">
-                <code>git clone https://github.com/joaopolisk/g3.git</code>
-            </div>
-        </div>
-
-        <div class="step">
-            <span>2. Acesse a pasta do projeto</span>
-            <div class="code-block">
-                <code>cd g3</code>
-            </div>
-        </div>
-
-        <div class="step">
-            <span>3. Compile e execute (Via Terminal)</span>
-            <div class="code-block">
-                <code>javac Main.java && java Main</code>
-            </div>
-        </div>
-    </section>
-<section class="team-terminal">
-
-    <h2>Conheça o Projeto por Dentro</h2>
-
-    <!-- CARROSSEL -->
-    <div class="team-carousel" id="teamCarousel">
-
         <div class="team-member" data-member="erica">
-            <img src="user1.jpg">
-            <span>Érica</span>
+            <img src="user1.jpg" class="profile-pic">
+            <div class="members-info">
+                <div class="name">Érica Silva</div>
+                <div class="social-wrapper">
+                    <a href="https://www.linkedin.com/in/ericajanuariovieira/" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="linkedin-icon.png" class="social-icon">
+                        <span>Visite meu LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/ericajv" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="github-icon.png" class="social-icon">
+                        <span>Visite meu GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="team-member" data-member="abner">
+            <img src="user3.jpg" class="profile-pic">
+            <div class="members-info">
+                <div class="name">Abner Chaves</div>
+                <div class="social-wrapper">
+                    <a href="https://www.linkedin.com/in/abner-vital-233730141/?originalSubdomain=br" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="linkedin-icon.png" class="social-icon">
+                        <span>Visite meu LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/AbnerVital" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="github-icon.png" class="social-icon">
+                        <span>Visite meu GitHub</span>
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="team-member" data-member="carol">
-            <img src="user2.jpg">
-            <span>Carol</span>
-        </div>
-
-        <div class="team-member" data-member="lucas">
-            <img src="user5.jpg">
-            <span>Lucas</span>
+            <img src="user2.jpg" class="profile-pic">
+            <div class="members-info">
+                <div class="name">Ana Carolina</div>
+                <div class="social-wrapper">
+                    <a href="https://www.linkedin.com/in/anacarolinavalimfaria" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="linkedin-icon.png" class="social-icon">
+                        <span>Visite meu LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/carolvalim" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="github-icon.png" class="social-icon">
+                        <span>Visite meu GitHub</span>
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="team-member" data-member="isadora">
-            <img src="user4.jpg">
-            <span>Isadora</span>
+            <img src="user4.jpg" class="profile-pic">
+            <div class="members-info">
+                <div class="name">Isadora Silva</div>
+                <div class="social-wrapper">
+                    <a href="https://www.linkedin.com/in/isaleaomoreira?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="linkedin-icon.png" class="social-icon">
+                        <span>Visite meu LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/Isleony" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="github-icon.png" class="social-icon">
+                        <span>Visite meu GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-member" data-member="lucas">
+            <img src="user5.jpg" class="profile-pic">
+            <div class="members-info">
+                <div class="name">Lucas Oliveira</div>
+                <div class="social-wrapper">
+                    <a href="https://www.linkedin.com/in/lucas-eduard?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="linkedin-icon.png" class="social-icon">
+                        <span>Visite meu LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/LukkasKardoso" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="github-icon.png" class="social-icon">
+                        <span>Visite meu GitHub</span>
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="team-member" data-member="carlos">
-            <img src="user7.jpg">
-            <span>Carlos</span>
+            <img src="user7.jpg" class="profile-pic">
+            <div class="members-info">
+                <div class="name">Carlos Pablo</div>
+                <div class="social-wrapper">
+                    <a href="https://www.linkedin.com/in/carlos-pablo-silva/" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="linkedin-icon.png" class="social-icon">
+                        <span>Visite meu LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/carlospablo12" target="_blank" class="social-links" onclick="event.stopPropagation()">
+                        <img src="github-icon.png" class="social-icon">
+                        <span>Visite meu GitHub</span>
+                    </a>
+                </div>
+            </div>
         </div>
-
-        <div class="team-member" data-member="thalia">
-            <img src="user6.jpg">
-            <span>Thalia</span>
-        </div>
-
-        <div class="team-member" data-member="abner">
-            <img src="user7.jpg">
-            <span>Abner Chaves</span>
-        </div>
-
     </div>
-
-    <!-- TERMINAL -->
     <div class="terminal big-terminal">
         <div class="terminal-header">
             <span class="dot red"></span>
             <span class="dot yellow"></span>
             <span class="dot green"></span>
-            <span class="terminal-title" id="terminalTitle">1000Devs</span>
+            <span class="terminal-title" id="terminalTitle">1000Devs - bash</span>
         </div>
-
-        <div class="terminal-body" id="terminalOutput_2"></div>
+        <div class="terminal-body" id="terminalOutput_2">
+            Clique em um perfil para ver as contribuições no projeto...
+        </div>
     </div>
-
 </section>
-
     <footer>
-        <p>&copy; 2026 Desafio 1000 Dev's - Jogo da Velha Java.</p>
+        <p>&copy; 2024 Desafio 1000 Dev's. Todos os direitos reservados.</p>
     </footer>
-
     <script src="script.js"></script>
-    <script src="carousel.js"></script>
-</body>
-</html>

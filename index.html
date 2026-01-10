@@ -9,10 +9,20 @@
 </head>
 
 <body>
+    <canvas id="matrix"></canvas>
+    <audio id="matrixAudio" loop>
+        <source src="clubbed-to-death.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="overlay">
+        <button onclick="startMatrix()">Siga o coelho branco</button>
+    </div>
+
+    <canvas id="matrix"></canvas>
     <header>
         <div class="logo-container">
             <img src="java-icon.png" alt="Java Logo" class="java-logo">
-            <h1>1º Hackathon 1000 Dev's</h1>
+            <h1>1º Hackathon 1000 Dev's - Grupo 3</h1>
         </div>
         <h2><br>Missão:<br>Desenvolvimento de um jogo da velha em Java!<br></h2>
     </header>
@@ -27,7 +37,7 @@
     <div>
         <section class="project-link">
             <h2>Projeto completo disponível em: <a href="https://github.com/joaopolisk/g3" target="_blank"
-                    ass="github-link"> github.com/joaopolisk/g3 </a></h2>
+                    ass="github-link">GitHub</a></h2>
             <div>
                 <h2>Terminal Interativo (Simulação)</h2>
             </div>
@@ -216,7 +226,7 @@
                 <div class="team-member" data-member="lucas">
                     <img src="user5.jpg" class="profile-pic">
                     <div class="members-info">
-                        <div class="name">Lucas Oliveira</div>
+                        <div class="name">Lucas Cardoso</div>
                         <div class="social-wrapper">
                             <a href="https://www.linkedin.com/in/lucas-eduard?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                                 target="_blank" class="social-links" onclick="event.stopPropagation()">
@@ -264,6 +274,10 @@
             </div>
         </section>
         <footer>
-            <p>&copy; 2024 Desafio 1000 Dev's. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Desafio 1000 Dev's. Grupo 3.</p>
+            <a href="https://www.linkedin.com/in/jpo42/" target="_blank" class="coelho-link"
+                onclick="event.stopPropagation()">
+                <img src="bunny.png" class="social-icon">
+                <span>Siga o coelho branco</span></a>
         </footer>
         <script src="script.js"></script>

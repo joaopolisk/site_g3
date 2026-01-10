@@ -1,3 +1,4 @@
+// ================= CARROSSEL DE TESTEMUNHOS =================
 const testimonials = [
     { name: "Érica", text: "O desafio foi controlar corretamente as jogadas do usuário e do computador sem quebrar o fluxo do jogo. Resolvi isso organizando bem a ordem das chamadas dos métodos e garantindo que cada turno fosse executado corretamente.", img: "./user1.jpg" },
     { name: "Ana Carolina", text: "Trabalhei na base do tabuleiro e em parte da lógica principal. A maior dificuldade foi garantir que as jogadas fossem válidas e que o estado do jogo estivesse sempre correto. Resolvi isso testando muitos cenários diferentes e ajustando a lógica passo a passo.", img: "./user2.jpg" },
@@ -7,7 +8,7 @@ const testimonials = [
     { name: "Thalia", text: "A maior dificuldade foi organizar o fluxo completo do jogo, controlando turnos, verificações de vitória e empate. No começo parecia confuso, mas separando o problema em pequenas funções e testando cada parte, consegui estruturar toda a lógica principal e fazer tudo funcionar em conjunto.", img: "./user6.jpg" },
     { name: "Abner Chaves", text: "Fiquei responsável por parte da lógica que verifica as condições de vitória. O maior desafio foi pensar em todas as possibilidades de linha, coluna e diagonal. Resolvi isso separando cada verificação em métodos pequenos e testando cada um individualmente.", img: "./user3.jpg" }
 ];
-
+// Popula o carrossel com os testemunhos
 const track = document.getElementById('carouselTrack');
 
 testimonials.forEach(t => {
@@ -209,6 +210,8 @@ function endGame() {
     printLine("Você pode rodar novamente com: java App");
 }
 
+// ================= SCRIPTS DOS MEMBROS =================
+
 const memberScripts = {
 
     thalia: [
@@ -299,6 +302,7 @@ const memberScripts = {
     ]
 };
 
+// ================= INTERAÇÃO DOS MEMBROS =================
 
 const members = document.querySelectorAll(".team-member");
 const terminalOutput = document.getElementById("terminalOutput_2");
@@ -322,6 +326,7 @@ members.forEach(member => {
         loadMember(id);
     });
 });
+// Carrega o script do membro no terminal simulado
 
 function loadMember(id) {
     terminalOutput.innerHTML = "";
@@ -342,3 +347,68 @@ function loadMember(id) {
 }
 
 
+// ================= EFEITO MATRIX =================
+const canvas = document.getElementById('matrix');
+const ctx = canvas.getContext('2d');
+
+// Ajusta o tamanho do canvas para ocupar a tela inteira
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Caracteres (Katana japonesa + texto personalizado)
+const letters = "日以し、まつしたときりMestraJohnson&Johnson";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+
+// Array para controlar a posição vertical de cada coluna
+const drops = [];
+for (let i = 0; i < columns; i++) {
+    drops[i] = 1;
+}
+
+function draw() {
+    // Fundo semi-transparente preto para criar o efeito de "rastro"
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "rgb(255, 0, 0)"; // Cor vermelha Matrix
+    ctx.font = fontSize + "px arial";
+
+    for (let i = 0; i < drops.length; i++) {
+        // Seleciona um caractere aleatório
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+
+        // Desenha o caractere
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        // Reseta o "drop" para o topo de forma aleatória após sair da tela
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+}
+
+// Executa a animação.
+setInterval(draw, 500);
+
+// Redimensiona o canvas se a janela mudar de tamanho
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+// Função para iniciar o efeito Matrix ao clicar no botão
+function startMatrix() {
+    // 1. Esconde o overlay
+    document.getElementById('overlay').style.display = 'none';
+
+    // 2. Dá play na música
+    const audio = document.getElementById('matrixAudio');
+    audio.play().catch(error => {
+        console.log("Erro ao tocar áudio: ", error);
+    });
+
+    // 3. Inicia o loop da animação (aquela que fizemos antes)
+    setInterval(draw, 33);
+}

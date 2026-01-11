@@ -356,7 +356,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 // Caracteres (Katana japonesa + texto personalizado)
-const letters = "日以し、まつしたときりMestraJohnson&Johnson";
+const letters = "日以し、まつしたときりMesttraJohnson&Johnson";
 const fontSize = 16;
 const columns = canvas.width / fontSize;
 

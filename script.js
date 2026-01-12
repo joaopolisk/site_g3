@@ -356,7 +356,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 // Caracteres (Katana japonesa + texto personalizado)
-const letters = "日以し、まつしたときりMestraJohnson&Johnson";
+const letters = "日以し、まつしたときりMesttraJohnson&Johnson";
 const fontSize = 16;
 const columns = canvas.width / fontSize;
 
@@ -415,21 +415,3 @@ function startMatrix() {
     // 3. Inicia o loop da animação (aquela que fizemos antes)
     setInterval(draw, 33);
 }
-
-// ================ COPIAR COMANDO ========================
-document.querySelectorAll('.copyable').forEach(block => {
-    block.addEventListener('click', () => {
-        const text = block.getAttribute('data-copy');
-
-        navigator.clipboard.writeText(text).then(() => {
-            const hint = block.querySelector('.copy-hint');
-            const oldText = hint.innerText;
-
-            hint.innerText = "Copiado! ✅";
-
-            setTimeout(() => {
-                hint.innerText = oldText;
-            }, 1500);
-        });
-    });
-});

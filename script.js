@@ -238,7 +238,7 @@ const memberScripts = {
         "- obterJogadaUsuario()",
         "- teveGanhador()",
         "- atualizaTabuleiro()",
-        "",
+        "- Colaboração no Site do Projeto",
         "✔ Parte: Estrutura e validações do tabuleiro"
     ],
 
@@ -403,6 +403,9 @@ function startMatrix() {
     // 1. Esconde o overlay
     document.getElementById('overlay').style.display = 'none';
 
+    // Rola para o topo da página
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     // 2. Dá play na música
     const audio = document.getElementById('matrixAudio');
     audio.play().catch(error => {
@@ -412,3 +415,21 @@ function startMatrix() {
     // 3. Inicia o loop da animação (aquela que fizemos antes)
     setInterval(draw, 33);
 }
+
+// ================ COPIAR COMANDO ========================
+document.querySelectorAll('.copyable').forEach(block => {
+    block.addEventListener('click', () => {
+        const text = block.getAttribute('data-copy');
+
+        navigator.clipboard.writeText(text).then(() => {
+            const hint = block.querySelector('.copy-hint');
+            const oldText = hint.innerText;
+
+            hint.innerText = "Copiado! ✅";
+
+            setTimeout(() => {
+                hint.innerText = oldText;
+            }, 1500);
+        });
+    });
+});

@@ -1,3 +1,52 @@
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    header h2 {
+        font-size: 16px;
+    }
+
+    .terminal {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .terminal-body {
+        font-size: 13px;
+    }
+
+    .setup-guide {
+        padding: 10px;
+    }
+
+    .step span {
+        font-size: 14px;
+    }
+
+    .code-block {
+        font-size: 13px;
+        overflow-x: auto;
+    }
+
+    .team-member {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+    }
+}
+
 :root {
     --primary-color: #f3f3f3;
     --text-color: #f5f4f4;
@@ -42,7 +91,7 @@ header {
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-50px);
     }
 }
 
@@ -114,12 +163,12 @@ h2 {
     width: 90%;
     margin: -10px auto;
     padding: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #f50e0e;
 }
 
 .setup-guide h2 {
     font-size: 1.5rem;
-    color: #faf1f1;
+    color: #f7f0f0;
     margin-bottom: 20px;
 }
 
@@ -134,6 +183,7 @@ h2 {
 .step {
     margin-bottom: 20px;
     text-align: left;
+    
 }
 
 .step span {
@@ -145,9 +195,9 @@ h2 {
 }
 
 .code-block {
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    padding: 12px 15px;
+    background-color: #973434a9;
+    border-radius: 12px;
+    padding: 14px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -157,12 +207,12 @@ h2 {
 
 .code-block:hover {
     transform: translateX(5px);
-    border-color: #b70c00;
+    border-color: #fff9f8;
 }
 
 code {
     font-family: 'Courier New', Courier, monospace;
-    color: #c7254e;
+    color: #ffffff;
     font-size: 0.95rem;
 }
 
@@ -381,4 +431,26 @@ button:hover {
     background: rgb(255, 0, 0);
     color: black;
     box-shadow: 0 0 20px rgb(255, 0, 0);
+}
+
+/* Copiar Código */
+.code-block.copyable {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.code-block.copyable:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.copy-hint {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    font-size: 12px;
+    opacity: 0.9;
+    color: #ff0404;
+    font-weight: bold;
 }

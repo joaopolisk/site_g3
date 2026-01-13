@@ -34,7 +34,7 @@ function nextSlide() {
     track.style.transform = `translateX(-${index * 100}%)`;
 }
 
-setInterval(nextSlide, 5000);
+setInterval(nextSlide, 13000);
 
 const input = document.getElementById("terminalInput");
 const output = document.getElementById("terminalOutput");

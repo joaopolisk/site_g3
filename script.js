@@ -391,7 +391,7 @@ function draw() {
 }
 
 // Executa a animação.
-setInterval(draw, 500);
+setInterval(draw, 450);
 
 // Redimensiona o canvas se a janela mudar de tamanho
 window.addEventListener('resize', () => {

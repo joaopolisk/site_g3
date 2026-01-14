@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Certificado - Jogo da Velha em Java</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 18px;
+            margin: 10px;
+        }
+
+        button {
+            cursor: pointer;
+            background: #c00000;
+            color: white;
+            border: none;
+        }
+
+        #area-certificado {
+            width: 1200px;
+            height: 850px;
+            margin: auto;
+            position: relative;
+            display: none;
+            background: url("certificado.png") no-repeat center;
+            background-size: contain;
+        }
+
+        #nome-aluno {
+            position: absolute;
+            top: 350px;
+            /* ajuste fino se quiser */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        #data-certificado {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 22px;
+            color: #ff4444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Gerar Certificado</h1>
+
+        <p>Digite seu nome:</p>
+        <input id="nome" placeholder="Seu nome completo">
+
+        <p>Data:</p>
+        <input id="data" type="date">
+
+        <br>
+        <button onclick="gerar()">Gerar Certificado</button>
+        <button onclick="baixar()">Baixar PDF</button>
+        <button onclick="baixarImagem()">Baixar como imagem</button>
+        <button onclick="compartilharLinkedIn()">Compartilhar no LinkedIn</button>
+
+    </div>
+
+    <hr>
+
+    <!-- CERTIFICADO -->
+    <div id="area-certificado">
+        <div id="nome-aluno">NOME DO ALUNO</div>
+        <div id="data-certificado">Data</div>
+    </div>
+
+    <script>
+        function gerar() {
+            const nome = document.getElementById("nome").value;
+            const data = document.getElementById("data").value;
+
+            if (!nome || !data) {
+                alert("Preencha nome e data!");
+                return;
+            }
+
+            document.getElementById("nome-aluno").innerText = nome;
+            document.getElementById("data-certificado").innerText =
+                "Data: " + new Date(data).toLocaleDateString("pt-BR");
+
+            document.getElementById("area-certificado").style.display = "block";
+        }
+
+        function baixar() {
+            const area = document.getElementById("area-certificado");
+
+            if (area.style.display === "none") {
+                alert("Gere o certificado primeiro!");
+                return;
+            }
+
+            html2pdf()
+                .set({
+                    margin: 0,
+                    filename: "certificado-jogo-da-velha.pdf",
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: "px", format: [1200, 850], orientation: "landscape" }
+                })
+                .from(area)
+                .save();
+        }
+
+        function baixarImagem() {
+            const area = document.getElementById("area-certificado");
+
+            html2canvas(area).then(canvas => {
+                const link = document.createElement("a");
+                link.download = "certificado.png";
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+            });
+        }
+
+        function compartilharLinkedIn() {
+            const texto =
+                "🎓 Acabo de receber meu certificado do Tutorial Jogo da Velha em Java no 1º Hackathon 1000 Dev´s! 🚀 " +
+                "Confira: https://joaopolisk.github.io/site_g3/";
+
+            const textoCodificado = encodeURIComponent(texto);
+
+            const url =
+                "https://www.linkedin.com/feed/?shareActive=true&text=" + textoCodificado;
+
+            window.open(url, "_blank");
+        }
+
+    </script>
+
+</body>
+
+</html>

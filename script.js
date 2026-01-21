@@ -239,7 +239,7 @@ const memberScripts = {
         "- teveGanhador()",
         "- atualizaTabuleiro()",
         "- Colaboração no Site do Projeto",
-        "- Organizou todo o projeto no trello",
+        "- Organização do projeto no Trello",
         "✔ Parte: Estrutura e validações do tabuleiro"
     ],
 
@@ -254,7 +254,7 @@ const memberScripts = {
         "- retornarPosicoesLivres()",
         "- exibirTabuleiro()",
         "",
-        "✔ Parte: Entrada de dados e jogadas do computador"
+        "✔ Parte: Entrada de dados e IA simples"
     ],
 
     carlos: [
@@ -289,7 +289,7 @@ const memberScripts = {
         "",
         "- processarVezUsuario()",
         "- processarVezComputador()",
-        "- continuidade do jogo",
+        "- Continuação do fluxo de jogo",
         "✔ Parte: Controle de turnos e execução de jogadas"
     ],
 
